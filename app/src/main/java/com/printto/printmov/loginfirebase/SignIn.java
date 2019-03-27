@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignIn extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private Button signout;
+    private Button signout, newPost, viewPost;
     private TextView statusText;
 
     @Override
@@ -21,15 +21,27 @@ public class SignIn extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
-        signout = findViewById(R.id.button);
         statusText = findViewById(R.id.statusText);
         statusText.setText("Signed in using email:\n" + mAuth.getCurrentUser().getEmail());
+
+        signout = findViewById(R.id.signOut);
+        newPost = findViewById(R.id.newPost);
+        viewPost = findViewById(R.id.viewPost);
+
     }
 
     public void signOutClicked(View view){
         mAuth.signOut();
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
         this.finish();
+    }
+
+    public void newPostClicked(View view){
+        startActivity(new Intent(getApplicationContext(), NewPost.class));
+    }
+
+    public void viewPostClicked(View view){
+        startActivity(new Intent(getApplicationContext(), ViewPosts.class));
     }
 
 }

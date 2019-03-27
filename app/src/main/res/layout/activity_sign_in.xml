@@ -29,8 +29,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/newPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="newPostClicked"
+                android:text="New Post" />
+
+            <Button
+                android:id="@+id/viewPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="viewPostClicked"
+                android:text="View Posts" />
+        </LinearLayout>
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/signOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -41,5 +62,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/statusText" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
